@@ -1,0 +1,16 @@
+<div class="card-product">
+  <div class="card-product-infos">
+    <h2><%= @restaurant.name %></h2>
+    <p>Category: <strong><%= @restaurant.category %></strong></p>
+    <p><%= @restaurant.address %></p>
+    <p><%= @restaurant.phone_number %></p>
+   <ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
+    <p><%= link_to "Add a comment", new_restaurant_review_path(@restaurant.id) %></p>
+  </div>
+</div>
+  <hr>
+    <p><%= link_to "Retour", restaurants_path %></p>
